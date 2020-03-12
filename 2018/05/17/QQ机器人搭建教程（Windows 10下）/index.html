@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="计算机," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="之前一周都在复习钢筋混凝土结构，搞得我身心俱疲，考完之后逛GitHub无意中找到了一个比较好玩的项目，就是由大神写的一个QQbot，功能强大，不过想起我好像之前申请过一个QQ小号，就拿它来做实验咯。 本文主要介绍如何具体搭建这个QQbot，功能就不具体介绍了，可以点这里来了解具体功能，我主要用这个QQbot（她的昵称是spirit，中文昵称没想好）来实现自动聊天，可以直接询问这个机器人一些比较简">
+<meta name="keywords" content="计算机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QQ机器人搭建教程（Windows 10下）">
+<meta property="og:url" content="https://hsiaochin.github.io/2018/05/17/QQ机器人搭建教程（Windows 10下）/index.html">
+<meta property="og:site_name" content="Stable Genius  |  Hsiaochin">
+<meta property="og:description" content="之前一周都在复习钢筋混凝土结构，搞得我身心俱疲，考完之后逛GitHub无意中找到了一个比较好玩的项目，就是由大神写的一个QQbot，功能强大，不过想起我好像之前申请过一个QQ小号，就拿它来做实验咯。 本文主要介绍如何具体搭建这个QQbot，功能就不具体介绍了，可以点这里来了解具体功能，我主要用这个QQbot（她的昵称是spirit，中文昵称没想好）来实现自动聊天，可以直接询问这个机器人一些比较简">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p81daovh7.bkt.clouddn.com/erweima.jpg">
+<meta property="og:updated_time" content="2018-12-25T15:02:34.980Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="QQ机器人搭建教程（Windows 10下）">
+<meta name="twitter:description" content="之前一周都在复习钢筋混凝土结构，搞得我身心俱疲，考完之后逛GitHub无意中找到了一个比较好玩的项目，就是由大神写的一个QQbot，功能强大，不过想起我好像之前申请过一个QQ小号，就拿它来做实验咯。 本文主要介绍如何具体搭建这个QQbot，功能就不具体介绍了，可以点这里来了解具体功能，我主要用这个QQbot（她的昵称是spirit，中文昵称没想好）来实现自动聊天，可以直接询问这个机器人一些比较简">
+<meta name="twitter:image" content="http://p81daovh7.bkt.clouddn.com/erweima.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hsiaochin.github.io/2018/05/17/QQ机器人搭建教程（Windows 10下）/"/>
+
+
+
+
+
+  <title>QQ机器人搭建教程（Windows 10下） | Stable Genius  |  Hsiaochin</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Stable Genius  |  Hsiaochin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">随笔 ，学习笔记 ，人工湿地 ，计算机 ，水务</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="https://hsiaochin.github.io/2018/04/29/%E5%85%B3%E4%BA%8E%E6%88%91/index/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="https://calendar.google.com/calendar/embed?src=4ciuuak0e01rr6ngooip030u00%40group.calendar.google.com&ctz=Asia%2FShanghai" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hsiaochin.github.io/2018/05/17/QQ机器人搭建教程（Windows 10下）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="胡霄进">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Stable Genius  |  Hsiaochin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">QQ机器人搭建教程（Windows 10下）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T12:54:14+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/17/QQ机器人搭建教程（Windows 10下）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/17/QQ机器人搭建教程（Windows 10下）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/17/QQ机器人搭建教程（Windows 10下）/" class="leancloud_visitors" data-flag-title="QQ机器人搭建教程（Windows 10下）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,197 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>之前一周都在复习钢筋混凝土结构，搞得我身心俱疲，考完之后逛<a href="www.github.com">GitHub</a>无意中找到了一个比较好玩的项目，就是由大神写的一个<a href="">QQbot</a>，功能强大，不过想起我好像之前申请过一个QQ小号，就拿它来做实验咯。</li>
+<li>本文主要介绍如何具体搭建这个QQbot，功能就不具体介绍了，可以点<a href="https://github.com/pandolia/qqbot" target="_blank" rel="noopener">这里</a>来了解具体功能，我主要用这个QQbot（她的昵称是spirit，中文昵称没想好）来实现自动聊天，可以直接询问这个机器人一些比较简单的问题，<del>省去了打开浏览器的麻烦</del>，无聊的时候也可以调戏调戏这个机器人。</li>
+</ul>
+<a id="more"></a>
+<div class="note warning"><p>由于我所申请的AI借口有数量限制，所以请各位朋友不要与QQbot聊一些奇怪的问题（误）。昨天我一个智障高中同学–不愿透露姓名的熊博达同学，和机器人聊了半个多小时废话，对这个机器人百般刁难，甚至说出一些低俗的话，最后机器人都说不想聊了</p></div>
+
+<hr>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><ol>
+<li>首先你的电脑里必须安装Python，具体安装过程：</li>
+</ol>
+<ul>
+<li>点击<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">这个链接</a>，进入下载页面，选择与你电脑兼容的可执行文件将其下载到你的电脑里</li>
+<li>找到你下载的exe文件，双击打开，进入安装页面，选择安装目录，一路next</li>
+<li>将Python添加到你的环境变量里，这个由于各个Windows版本不同添加方法有所不同，我的win10是1803版本，改变了一下进入方式，如果大家不知道如何添加，可以自行百度。</li>
+</ul>
+<ol start="2">
+<li>将qqbot这个package安装到我们的电脑里，具体过程：</li>
+</ol>
+<ul>
+<li>打开命令行：<code>win</code>+<code>R</code> -&gt;输入<code>cmd</code> -&gt;回车</li>
+<li>在命令行输入<code>pip -v</code>，查看pip管理包是否安装，如果已安装，则下一步</li>
+<li>输入<code>pip install qqbot</code>，等待</li>
+</ul>
+<ol start="3">
+<li><p>这个时候你的qqbot就可以使用了，但我的目标是运行自动回复脚本，所以接下来还有几步</p>
+</li>
+<li><p>到<a href="https://github.com/HsiaoChin/qqbot" target="_blank" rel="noopener">这个GitHub</a>页面内点击右上角绿色download按钮下载这个文件</p>
+</li>
+<li><p>本地解压缩文件夹，打开文件夹，找到～/sample.py，把它复制粘贴到你的<strong>用户目录</strong>/.qqbot-tmp/plugins里面(即c:\user\xxx.qqbot-tmp\plugins)</p>
+</li>
+<li><p>右键 sample.py，edit该文件，把里面的代码<strong>全部</strong>删除，并把下面的代码<strong>全部</strong>拷贝到sample.py里</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 插件加载方法：</span></span><br><span class="line"><span class="comment"># 1. 启动 qqbot </span></span><br><span class="line"><span class="comment"># 2. 将本文件保存至 ~/.qqbot-tmp/plugins 目录 （或 c:\user\xxx\.qqbot-tmp\plugins ）</span></span><br><span class="line"><span class="comment"># 3. 在命令行窗口输入： qq plug sample</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">key = <span class="string">"85b9963e9de84562924478fe395adf63"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_response</span><span class="params">(content)</span>:</span></span><br><span class="line">    apiUrl = <span class="string">'http://www.tuling123.com/openapi/api'</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">'key'</span>    : key,</span><br><span class="line">        <span class="string">'info'</span>   : content,</span><br><span class="line">        <span class="string">'userid'</span> : <span class="string">'hu'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        r = requests.post(apiUrl, data=data).json()</span><br><span class="line">        <span class="keyword">return</span> r.get(<span class="string">'text'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">onQQMessage</span><span class="params">(bot, contact, member, content)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> content == <span class="string">'-hello'</span>:</span><br><span class="line">        bot.SendTo(contact, <span class="string">'你好，我是QQ机器人'</span>)</span><br><span class="line">    <span class="keyword">elif</span> content == <span class="string">'-stop'</span>:</span><br><span class="line">        bot.SendTo(contact, <span class="string">'QQ机器人已关闭'</span>)</span><br><span class="line">        bot.Stop()</span><br><span class="line">    <span class="keyword">elif</span> contact.ctype == <span class="string">'buddy'</span>:</span><br><span class="line">        bl = bot.List(<span class="string">'buddy'</span>)</span><br><span class="line">        reply = get_response(content)</span><br><span class="line">        bot.SendTo(contact,reply)</span><br><span class="line"><span class="comment">#这个代码是我自己改的，可能有错，应该不存在侵权，侵删</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以看到sample.py里有一个key，这个key就是<a href="www.tuling123.com">图灵机器人</a>API接口，我的key每天有限制，<strong>有需要使用的请联系我</strong>，方便我管理数据，欢迎大家自行注册并获取key（具体申请方法很简单，进入官网后按照指示即可，不过注册的时候有坑，就是虽然邮箱是非必须项，但不输入邮箱的话就无法获取验证码）。</p>
+</li>
+<li><p>一切就绪，现在：</p>
+</li>
+</ol>
+<ul>
+<li>打开cmd，输入<code>qqbot</code>，系统会自动下载一个登陆二维码，用你需要变身机器人的QQ扫码登录</li>
+<li><strong>再重新</strong>打开一个cmd，<strong>注意前一个不要退出</strong>，输入<code>qq plug sample</code>，这时候，就会自动加载sample插件了</li>
+</ul>
+<ol start="9">
+<li>成功了，可以开始实验咯（有的问题并不会精确回答，原因比较多，中文语义复杂，有的时候人工智能并不能精确识别，还有就是可能这个AI还比较弱，不同于Google AI之类有大量数据可以进行文本分析）</li>
+</ol>
+<div class="note success"><p>spirit之类的QQbot暂时不能识别图片，所以发送图片她只会接收到一段空字符，理解为你啥都没说</p></div>
+
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>是不是很简单呢？快试试吧，随文贴上spirit的QQ二维码，欢迎调戏（人工审核好友）<br><img src="http://p81daovh7.bkt.clouddn.com/erweima.jpg" alt="qrcode"> </p>
+<p>有任何问题请在评论里提出，或者加我微信也行</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    胡霄进
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hsiaochin.github.io/2018/05/17/QQ机器人搭建教程（Windows 10下）/" title="QQ机器人搭建教程（Windows 10下）">https://hsiaochin.github.io/2018/05/17/QQ机器人搭建教程（Windows 10下）/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机/" rel="tag"># 计算机</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/01/MathJax学习笔记/" rel="next" title="MathJax学习笔记">
+                <i class="fa fa-chevron-left"></i> MathJax学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/30/准大学过来人/" rel="prev" title="准大学过来人">
+                准大学过来人 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+  
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">胡霄进</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HsiaoChin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:hhuxiaojin@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-windows"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:hhuxiaojin@gmail.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hsiaochinhu" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/hsiaochin.hu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/hsiaochinhu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教程开始"><span class="nav-number">1.</span> <span class="nav-text">教程开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">2.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">胡霄进</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = '昵称（真的猜不到哇）,邮箱（方便提醒回复）,your link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'BtaDHnQU4vwG53iQrvf2n7vx-gzGzoHsz',
+        appKey: 'vKUtiEqwXlSyJ7xhJqdDbQKY',
+        placeholder: '来啊 ～～ 快活啊 ～～～',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("BtaDHnQU4vwG53iQrvf2n7vx-gzGzoHsz", "vKUtiEqwXlSyJ7xhJqdDbQKY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
